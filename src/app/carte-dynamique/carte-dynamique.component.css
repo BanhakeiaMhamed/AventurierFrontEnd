@@ -1,0 +1,58 @@
+h1 {
+  text-align: center;
+}
+
+/* drew Board outside and Center table in page*/
+
+.board-table {
+  font-size: 1.75em;
+  border: 3px solid #444;
+  border-collapse: collapse;
+  background: #fff;
+  margin-right: 0.01em auto;
+  margin-top: 30em auto;
+  margin-bottom: 30em auto;
+}
+
+/* drew Board inside */
+
+td {
+  border: 1px solid rgb(68, 68, 68);
+  width: 30px;
+  height: 30px;
+ 
+}
+
+/* draw bigger line to make 3x3 sudoku box more visible */
+.sudoku-table tr:nth-child(3n + 3) {
+  /*border-bottom: 5px solid rgb(31, 114, 79);*/
+}
+
+.sudoku-table td:nth-child(3n + 3) {
+ /* border-right: 5px solid rgb(201, 12, 12);*/
+}
+
+
+td:not([contenteditable]) {
+  background: rgba(222, 245, 97, 0.59);
+}
+
+.incorrect-input {
+  background: red;
+}
+input {
+  width: 50px;
+  height: 50px;
+  
+}
+
+.sty {
+  
+margin-bottom: 10px;
+
+}
+
+
+.example-container mat-form-field + mat-form-field {
+  margin-left: 8px;
+}

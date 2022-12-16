@@ -1,0 +1,47 @@
+<div>
+ <mat-grid-list cols="2">
+  <mat-grid-tile >
+    <div class="">
+      <button class="sty" mat-stroked-button color="primary" (click)="changeBoard()"> Récuperer une nouvelle carte</button>
+    <form [formGroup]="playForm">
+      <div class="example-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Entrer une suite de commandes</mat-label>
+          <input matInput placeholder="N,S,E,O are accepted"  formControlName ="directions" required>
+          <mat-error >directions are not accepted</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="example-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Entrer la abscisse </mat-label>
+          <input matInput placeholder="la valeur de x" formControlName ="abscisse" required>
+        </mat-form-field>
+      </div>
+      <div class="example-container">
+        <mat-form-field appearance="fill">
+          <mat-label>Entrer l'ordonée </mat-label>
+          <input matInput placeholder="la valeur de y" formControlName ="ordonnee" required>
+        </mat-form-field>
+      </div>
+      <button mat-stroked-button color="primary" [disabled]= "playForm.invalid" (click)="searcheThePlayer()"> Jouer</button>
+    </form>
+    </div>
+  </mat-grid-tile>
+  <mat-grid-tile >
+    <table class="board-table">
+      <tbody>
+          <tr class="row" *ngFor="let row of board$ |async">
+              <td class="col" *ngFor="let col of row">
+               <div class="card">{{col}}</div>
+              </td>
+          </tr>
+      </tbody>
+  
+    </table>
+  </mat-grid-tile>
+ </mat-grid-list>
+</div>
+
+
+
